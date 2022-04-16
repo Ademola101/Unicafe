@@ -17,6 +17,18 @@ button press history  {allClick.join(' ')}
      </p>
     )
   
+};
+
+
+const Button = ({onClick,text}) => {
+  return (
+    <button onClick={onClick}>
+
+      {text}
+
+
+    </button>
+  )
 }
 const App = () => {
 
@@ -38,17 +50,10 @@ const handleLeftClick = () => {
 
 return (
   <> 
-  <button onClick={handleRightClick}>
-
-right
-  </button>
   {right}
-  <button onClick={handleLeftClick}>
-
-left
-  </button>
+  <Button onClick={handleRightClick} text = "right"/>
+  <Button onClick={handleLeftClick} text = "left"/>
   {left}
-
  <History allClick = {allClick} />
   </>
 )
