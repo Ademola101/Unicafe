@@ -1,62 +1,45 @@
-import { useState } from 'react'
+import { useState } from "react";
 
+const Header = () => {
+  return(
+    <p>
 
-const History = ({allClick}) => {
-  if (allClick.length === 0) {
-    return (
-      <p>
+      Give feedback
+    </p>
+  )
+};
 
-This app is used by pressing the button
-      </p>
-    )
-    }
-    return (
-     <p>
-
-button press history  {allClick.join(' ')}
-     </p>
-    )
+const Button = ({onClick, text}) => {
+  return (
+    <button onClick={onClick}>
+{text}
+    </button>
+  )
   
 };
 
-
-const Button = ({onClick,text}) => {
+const Section = () => {
   return (
-    <button onClick={onClick}>
-
-      {text}
-
-
-    </button>
+    <section>
+      Satistics
+    </section>
   )
-}
+};
+
 const App = () => {
 
-const [right, setRight] = useState(0);
-const [left, setLeft] = useState(0);
-const [allClick, setAll] = useState([]);
+  const [feedBack, setFeedBacks] = useState(0)
 
-const handleRightClick = () => {
-  setAll(allClick.concat('R')) 
-  // concat because we dont want to modify the state directly
-  setRight(right + 1)
-};
-const handleLeftClick = () => {
-  setAll(allClick.concat('L'))
-  setLeft(left + 1)
-};
+  return(
+<>
+<Header/>
 
-// debugger
+    <Section/>
+</>
 
-return (
-  <> 
-  {right}
-  <Button onClick={handleRightClick} text = "right"/>
-  <Button onClick={handleLeftClick} text = "left"/>
-  {left}
- <History allClick = {allClick} />
-  </>
-)
+    
+  )
 
-}  
+}
+
 export default App
