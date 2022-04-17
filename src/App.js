@@ -1,41 +1,12 @@
 import { useState } from "react";
+import Header from "./components/Header";
+import Button from "./components/Button";
+import Stats from "./components/Stats";
+import Section from "./components/Section";
 
-const Header = () => {
-  return(
-    <h1>
 
-      Give feedback
-    </h1>
-  )
-};
 
-const Button = ({onClick, text}) => {
-  return (
-    <button onClick={onClick}>
-{text}
-    </button>
-  )
-  
-};
 
-const Section = () => {
-  return (
-    <section>
-      Satistics
-    </section>
-    
-
-  )
-};
-
-const Stats = ({stat,text}) => {
-  return(
-<p>
-{text}: {stat}
-  
-</p>
-  )
-}
 
 const App = () => {
 
@@ -58,10 +29,11 @@ const App = () => {
     setNeutral(neutral + 1)
   }
 
-  const goodStat = () => {
-    return(
-    feedback.filter(item => item ==="G").length)
-  }
+  const goodStat = feedback.filter(item => item ==="G").length;
+  const neutralStat = feedback.filter(item => item ==="N").length;
+  const badStat = feedback.filter(item => item ==="B").length;
+  const all = feedback.length 
+
 
   return(
 <>
@@ -72,8 +44,12 @@ const App = () => {
 
     <Section/>
 
-    <Stats stat = {goodStat} text = "good" />
-    <Stats text = "bad" stat = {goodStat}/>
+    <Stats  text = "good" stat = {goodStat}  />
+    <Stats text = "neutral" stat = {neutralStat}/>
+    <Stats text = "bad" stat = {badStat}/>
+    <p>
+      all : {all}
+    </p>
 </>
 
     
