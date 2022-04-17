@@ -3,11 +3,33 @@ import Header from "./components/Header";
 import Button from "./components/Button";
 import Stats from "./components/Stats";
 import Section from "./components/Section";
-import noStat from "./components/noStat";
 
 
 
+const Complex = (good,neutral,bad, all) => {
+  if(good.length === 0 && neutral.length ===0 && bad.length === 0) {
+    return(
+      <p>
+        No feedback given
+      </p>
 
+    )
+  }
+
+  return(
+    <>
+    
+    <Stats  text = "good" stat = {good}  />
+    <Stats text = "neutral" stat = {neutral}/>
+    <Stats text = "bad" stat = {bad}/>
+    <p>
+      all : {all}
+    </p>
+    </>
+  )
+
+
+}
 
 const App = () => {
 
@@ -39,20 +61,15 @@ const App = () => {
   return(
 <>
 <Header/> 
-
+<div className="section">
 <Button onClick={handleGoodClick} text = "good"/>
 <Button onClick={handleNeutralClick} text = "neutral"/>
 <Button onClick={handleBadClick} text = "bad"/>
-
+</div>
 
     <Section/>
 
-    <Stats  text = "good" stat = {goodStat}  />
-    <Stats text = "neutral" stat = {neutralStat}/>
-    <Stats text = "bad" stat = {badStat}/>
-    <p>
-      all : {all}
-    </p>
+   <Complex good= {goodStat} bad = {badStat} neutral = {neutralStat} all = {all}/>
 </>
 
     
