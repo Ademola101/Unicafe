@@ -6,8 +6,9 @@ import Section from "./components/Section";
 
 
 
-const Complex = (good,neutral,bad, all) => {
-  if(good.length === 0 && neutral.length ===0 && bad.length === 0) {
+const Complex = ({good,neutral,bad, all}) => {
+  
+  if(all === 0) {
     return(
       <p>
         No feedback given
@@ -15,8 +16,7 @@ const Complex = (good,neutral,bad, all) => {
 
     )
   }
-
-  return(
+else return(
     <>
     
     <Stats  text = "good" stat = {good}  />
@@ -70,11 +70,13 @@ const App = () => {
     <Section/>
 
    <Complex good= {goodStat} bad = {badStat} neutral = {neutralStat} all = {all}/>
-</>
 
-    
+   
+</> 
   )
 
 }
+
+
 
 export default App
