@@ -1,5 +1,5 @@
 const Stats = ({stat,text}) => {
-  if ({stat}.length === 0) {
+  if (stat.length === 0) {
     return (
       <p>
         No feedback given
