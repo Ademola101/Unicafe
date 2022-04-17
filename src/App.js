@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Button from "./components/Button";
 import Stats from "./components/Stats";
 import Section from "./components/Section";
+import noStat from "./components/noStat";
 
 
 
@@ -37,10 +38,12 @@ const App = () => {
 
   return(
 <>
-<Header/>
+<Header/> 
+
 <Button onClick={handleGoodClick} text = "good"/>
 <Button onClick={handleNeutralClick} text = "neutral"/>
 <Button onClick={handleBadClick} text = "bad"/>
+
 
     <Section/>
 
