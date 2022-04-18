@@ -69,7 +69,7 @@ const App = () => {
 
     <Section/>
 
-   <Complex good= {goodStat} bad = {badStat} neutral = {neutralStat} all = {all}/>
+   <Complex className="section" good= {goodStat} bad = {badStat} neutral = {neutralStat} all = {all}/>
 
    
 </> 
