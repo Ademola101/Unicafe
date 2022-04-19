@@ -12,7 +12,8 @@ const Complex = ({good,neutral,bad, all}) => {
   if(all === 0) {
     return(
       <p>
-        No feedback given
+        No feedback given. <br/>
+        Please give feeback
       </p>
 
     )
