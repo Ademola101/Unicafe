@@ -1,9 +1,16 @@
 const Stats = ({stat,text}) => {
   return(
-<p>
-{text}: {stat}
+<div className="flex flex-row border-2 border-black rounded-md">
+
+  <div className="flex-grow border-r-2 border-black text-center"> {text}</div>
+ <div className="flex-grow text-center">
+
+
+{stat}
   
-</p>
+  </div> 
+  
+</div>
   )
 };
 

@@ -23,9 +23,7 @@ else return(
     <Stats  text = "Good" stat = {good}  />
     <Stats text = "Neutral" stat = {neutral}/>
     <Stats text = "Bad" stat = {bad}/>
-    <p>
-      all : {all}
-    </p>
+    <Stats text = "All ratings" stat = {all}/>
     </>
   )
 
