@@ -1,6 +1,6 @@
 const Section = () => {
   return (
-    <section>
+    <section className="text-5xl">
       Satistics
     </section>
     

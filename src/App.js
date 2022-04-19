@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Button from "./components/Button";
 import Stats from "./components/Stats";
 import Section from "./components/Section";
+import "./styles/output.css"
 
 
 
@@ -18,10 +19,10 @@ const Complex = ({good,neutral,bad, all}) => {
   }
 else return(
     <>
-    
-    <Stats  text = "good" stat = {good}  />
-    <Stats text = "neutral" stat = {neutral}/>
-    <Stats text = "bad" stat = {bad}/>
+     <Section/>
+    <Stats  text = "Good" stat = {good}  />
+    <Stats text = "Neutral" stat = {neutral}/>
+    <Stats text = "Bad" stat = {bad}/>
     <p>
       all : {all}
     </p>
@@ -59,20 +60,21 @@ const App = () => {
 
 
   return(
-<>
+<div className="flex justify-center bg-gray-300 h-screen font-serif">
+  <div className="flex flex-col gap-10">
 <Header/> 
-<div className="section">
-<Button onClick={handleGoodClick} text = "good"/>
-<Button onClick={handleNeutralClick} text = "neutral"/>
-<Button onClick={handleBadClick} text = "bad"/>
+<div>
+<Button onClick={handleGoodClick} text = "Good"/>
+<Button onClick={handleNeutralClick} text = "Neutral"/>
+<Button onClick={handleBadClick} text = "Bad"/>
 </div>
 
-    <Section/>
+   
 
    <Complex className="section" good= {goodStat} bad = {badStat} neutral = {neutralStat} all = {all}/>
 
    
-</> 
+</div> </div>
   )
 
 }
