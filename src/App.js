@@ -8,17 +8,10 @@ import "./styles/output.css"
 
 
 const Complex = ({good,neutral,bad, all}) => {
-  
-  if(all === 0) {
-    return(
-      <p>
-        No feedback given. <br/>
-        Please give feeback
-      </p>
-
-    )
-  }
-else return(
+  return(all === 0 ? <p>
+    No feedback given. <br/>
+    Please give feeback
+  </p> : 
     <>
      <Section/>
     <Stats  text = "Good" stat = {good}  />
@@ -26,8 +19,9 @@ else return(
     <Stats text = "Bad" stat = {bad}/>
     <Stats text = "All ratings" stat = {all}/>
     </>
-  )
-
+)
+  
+  
 
 }
 
